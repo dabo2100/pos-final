@@ -16,7 +16,7 @@ export default function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<h1>Dashboard Page</h1>} />
             <Route path="staff" element={<h1>Staff Management Page</h1>} />
-            <Route path="menu" element={<h1>Menu Editor Page</h1>} />
+            <Route path="menu" element={<h1>Menu Edit Page</h1>} />
             <Route path="sales" element={<h1>Sales Report Page</h1>} />
           </Route>
 
