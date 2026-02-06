@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom';
-import NavMenu from '../componenets/NavMenu';
-import SearchBar from '../componenets/SearchBar';
+import { Outlet } from "react-router-dom";
+import NavMenu from "../componenets/NavMenu";
+import SearchBar from "../componenets/SearchBar";
 
 export default function CashierLayout() {
   return (
@@ -8,7 +8,7 @@ export default function CashierLayout() {
       <NavMenu />
       <div className="h-full grow  flex flex-col">
         <SearchBar />
-        <div className="w-full h-2.5 bg-green-500 grow overflow-auto">
+        <div className="w-full h-2.5 grow overflow-auto">
           <Outlet />
         </div>
       </div>
