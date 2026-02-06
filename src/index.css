@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap");
 @import "tailwindcss";
+
 * {
   font-family: "Inter", sans-serif;
 }
@@ -8,6 +10,7 @@
   --color-mainGreen: #10b981;
   --font-lexend: "Lexend", sans-serif;
   --color-border: #e2e8f0;
+  --font-outfit: "Outfit", sans-serif;
 }
 
 @layer components {

@@ -15,7 +15,7 @@ export default function StaffLogin() {
         {/* Header */}
         <div className='flex flex-col items-center pt-8.5 gap-2'>
           <img src={stafflogo} alt="Staff Logo" />
-          <h1 className='font-Outfit font-normal text-[#0F172B] text-[30px]'>
+          <h1 className='font-outfit! font-normal text-[#0F172B] text-[30px]'>
             Staff Access
           </h1>
           <p className='text-[#62748E] text-center'>
@@ -57,7 +57,7 @@ export default function StaffLogin() {
       </div>
 <div className="bg-[#10B981] rounded-full opacity-5 absolute top-0 left-0 w-[576.0000610351562px] h-[409.5899963378906px] blur-[120px]" />
       <div className="bg-[#F59E0B] rounded-full opacity-5 absolute bottom-0 right-0 w-[576.0000610351562px] h-[409.5899963378906px] blur-[120px]" />
-      <div className=" bg-[radial-gradient(circle,#10B9810D_5%,#10B98100_0%)] rounded-full opacity-5 absolute top-0 right-0 w-294.75 h-256 blur-[120px]" />
+      <div className="  bg-radial-[at_5%_0%] from-[#10B9810D] to-[#10B98100]  rounded-full opacity-5 absolute top-0 right-0 w-294.75 h-256 blur-[120px]" />
 
     </div>
   )
