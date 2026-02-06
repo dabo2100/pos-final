@@ -5,6 +5,7 @@ import { FaDeleteLeft } from 'react-icons/fa6'
 import { FiDelete } from 'react-icons/fi'
 import { MdOutlineDoneOutline } from 'react-icons/md'
 import { TbPointFilled } from 'react-icons/tb'
+import { IoIosCheckmarkCircleOutline } from 'react-icons/io'
 
 export default function StaffLogin() {
   return (
@@ -44,8 +45,7 @@ export default function StaffLogin() {
     0
   </button>
   <button className='w-27 h-16 bg-[#F8FAFC] border border-[#E2E8F0] shadow rounded-xl flex justify-center items-center text-green-500 cursor-pointer'>
-    <MdOutlineDoneOutline />
-
+<IoIosCheckmarkCircleOutline className="text-center text-[#00BC7D] text-xl font-bold" />
   </button>
 </div>
 <button className='w-87.5    bg-linear-to-r from-[#059669] to-[#10B981] text-amber-50 h-15 rounded-xl cursor-pointer'>Sign In</button>
@@ -55,8 +55,9 @@ export default function StaffLogin() {
       <TbPointFilled  className='text-green-600 text-3xl pr-2 '/>
       <span className=' font-medium text-[#90A1B9] leading-[1.2px]'>System Secure & Live</span>
       </div>
-<div className="bg-[#10B981] rounded-full absolute top-0 left-0 w-25 h-25 blur-[120px]" />
-      <div className="bg-[#F59E0B] rounded-full absolute bottom-0 right-0 w-25 h-25 blur-[120px]" />
+<div className="bg-[#10B981] rounded-full opacity-5 absolute top-0 left-0 w-[576.0000610351562px] h-[409.5899963378906px] blur-[120px]" />
+      <div className="bg-[#F59E0B] rounded-full opacity-5 absolute bottom-0 right-0 w-[576.0000610351562px] h-[409.5899963378906px] blur-[120px]" />
+      <div className=" bg-[radial-gradient(circle,#10B9810D_5%,#10B98100_0%)] rounded-full opacity-5 absolute top-0 right-0 w-294.75 h-256 blur-[120px]" />
 
     </div>
   )
