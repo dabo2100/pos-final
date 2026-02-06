@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CashierLayout from './layouts/CashierLayout';
 import AdminLayout from './layouts/AdminLayout';
 import CategoryProducts from './pages/CategoryProducts';
+import StaffLogin from './pages/StaffLogin';
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
 
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<h1>Dashboard Page</h1>} />
-            <Route path="staff" element={<h1>Staff Management Page</h1>} />
+            <Route path="staff" element={<StaffLogin />} />
             <Route path="menu" element={<h1>Menu Edit Page</h1>} />
             <Route path="sales" element={<h1>Sales Report Page</h1>} />
           </Route>
