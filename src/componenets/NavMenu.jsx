@@ -20,7 +20,7 @@ export default function NavMenu() {
 
       <div className="w-full px-2 flex flex-col grow h-2.5  items-center gap-4 ">
         {categories.map((el, index) => (
-          <NavLink to={el.path} key={index} className={({ isActive }) => (isActive && 'bg-mainGreen/10 text-mainGreen ') + ' activeGreen'}>
+          <NavLink to={el.path} key={index} className={({ isActive }) => (isActive && 'bg-mainGreen/10 text-mainGreen ') + ' activeGreen items-center'}>
             <img className="w-6" src={el.icon} />
             <p className="text-[10px] uppercase ">{el.name}</p>
           </NavLink>

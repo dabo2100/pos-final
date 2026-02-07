@@ -15,7 +15,7 @@
 
 @layer components {
   .activeGreen {
-    @apply w-full py-3 rounded-2xl flex flex-col items-center gap-1 text-[#90A1B9];
+    @apply w-full py-3 rounded-2xl flex flex-col gap-1 text-[#90A1B9];
     @apply hover:bg-mainGreen/10 hover:text-mainGreen;
   }
 
