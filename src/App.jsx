@@ -3,10 +3,12 @@ import CashierLayout from './layouts/CashierLayout';
 import AdminLayout from './layouts/AdminLayout';
 import CategoryProducts from './pages/CategoryProducts';
 import StaffLogin from './pages/StaffLogin';
+import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   return (
     <div className="w-full h-dvh overflow-hidden">
+      <Toaster/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CashierLayout />}>

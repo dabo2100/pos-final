@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavMenu from "../componenets/NavMenu";
 import SearchBar from "../componenets/SearchBar";
+import SideCart from "../componenets/SideCart";
 
 export default function CashierLayout() {
   return (
@@ -12,7 +13,9 @@ export default function CashierLayout() {
           <Outlet />
         </div>
       </div>
-      <div className="w-104.75 h-full bg-blue-500"></div>
+      <div className="w-104.75 h-full">
+        <SideCart />
+      </div>
     </div>
   );
 }
