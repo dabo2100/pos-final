@@ -27,12 +27,12 @@ export default function SideCartProducts({ items, incrementQty, decrementQty }) 
               >
                 <FiMinus className="text-[12px]" />
               </button>
-              <p>{el.qty}</p>
+              <p className="text-[12px] font-black">{el.qty}</p>
               <button
                 className="cursor-pointer"
                 onClick={() => incrementQty(index)}
               >
-                <FiPlus className="text-[12px]" />
+                <FiPlus className="text-[12px] text-mainGreen" />
               </button>
             </div>
           </div>
