@@ -4,11 +4,12 @@ import AdminLayout from './layouts/AdminLayout';
 import CategoryProducts from './pages/CategoryProducts';
 import StaffLogin from './pages/StaffLogin';
 import { Toaster } from 'react-hot-toast';
+import LoginStaff from './pages/LoginPage';
 
 export default function App() {
   return (
     <div className="w-full h-dvh overflow-hidden">
-      <Toaster/>
+      <Toaster />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CashierLayout />}>
@@ -26,7 +27,7 @@ export default function App() {
           <Route path="/orders" />
           <Route path="/kitchen" />
 
-          <Route path="/login" />
+          <Route path="/login" element={<LoginStaff />} />
           <Route path="*" element={<h1>Error 404 | Page Not Found</h1>} />
         </Routes>
       </BrowserRouter>
