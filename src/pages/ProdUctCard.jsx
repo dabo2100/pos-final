@@ -7,7 +7,7 @@ export default function ProductCard({ el }) {
 
   return (
     <div className={cardStyle}>
-      <img src={el.img ? domain + el.img?.url : noImg} alt="Shoes" className="rounded-4xl h-68.25" />
+      <img src={el.img ? domain + el.img?.url : noImg} alt="Shoes" className="rounded-4xl object-cover h-68.25 w-full" />
       <div className="w-full grow  flex flex-col items-start justify-start gap-1 pb-2 pr-2 pl-2 ">
         <h1 className="font-Lexend font-bold text-[18px] leading-7 tracking-[0px] align-middle">{el.name}</h1>
         <p className="text-[#90A1B9] font-Lexend text-[12px] leading-5 tracking-[0px]">{el.description}</p>

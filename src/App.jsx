@@ -14,7 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<CashierLayout />}>
             <Route index element={<h1 className="h-[200vh] bg-violet-500">Dashboard Of Cashier</h1>} />
-            <Route path=":categoryName" element={<CategoryProducts />} />
+            <Route path=":categoryId" element={<CategoryProducts />} />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
@@ -24,8 +24,8 @@ export default function App() {
             <Route path="sales" element={<h1>Sales Report Page</h1>} />
           </Route>
 
+          <Route path="/kitchen" element={<h1>kitchen Screen</h1>} />
           <Route path="/orders" />
-          <Route path="/kitchen" />
 
           <Route path="/login" element={<LoginStaff />} />
           <Route path="*" element={<h1>Error 404 | Page Not Found</h1>} />
