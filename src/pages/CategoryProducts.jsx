@@ -7,27 +7,15 @@ import { useParams } from 'react-router-dom';
 export default function CategoryProducts() {
   const [products, setProducts] = useState([]);
   const params = useParams();
-
   useEffect(() => {
     let categoryId = params.categoryId;
-
     let endPoint = '/api/categories/' + categoryId;
     let url = domain + endPoint;
-
-    axios
-      .get(url, {
-        params: {
-          populate: {
-            products: {
-              populate: '*',
-            },
-          },
-        },
-      })
-      .then((res) => {
-        setProducts(res.data.data.products);
-      });
+    axios.get(url, { params: { populate: { products: { populate: '*' } } } }).then((res) => {
+      setProducts(res.data.data.products);
+    });
   }, [params]);
+
   return (
     <div className="p-10 bg-[#FFFF] flex-col">
       <div className="flex flex-col gap-8 items-center justify-center h-full grow ">
@@ -39,9 +27,9 @@ export default function CategoryProducts() {
           </div>
         </div>
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 h-dvh ">
-          {products.map((el, index) => {
-            return <ProductCard key={index} el={el} />;
-          })}
+          {products.map((el, index) => (
+            <ProductCard key={index} el={el} />
+          ))}
         </div>
       </div>
     </div>
