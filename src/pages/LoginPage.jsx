@@ -1,62 +1,18 @@
 import { LuUser, LuLock, LuDelete } from 'react-icons/lu';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { domain } from '../store';
-import toast from 'react-hot-toast';
+
 import { useNavigate } from 'react-router-dom';
+import useLogin from '../hooks/useLogin';
 
 export default function LoginStaff() {
+  const { handleLogin, handleClick } = useLogin();
+
   const [activeInput, setActiveInput] = useState('id');
   const [staffId, setStaffId] = useState('');
   const [pinId, setPinId] = useState('');
   const naviagte = useNavigate();
 
   const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'backspace', '0'];
-
-  const handleClick = (key) => {
-    if (key == 'backspace') {
-      if (activeInput == 'id') {
-        const result = staffId.substring(0, staffId.length - 1);
-        setStaffId(result);
-      } else {
-        const result = pinId.substring(0, pinId.length - 1);
-        setPinId(result);
-      }
-    } else {
-      if (activeInput == 'id') {
-        setStaffId(staffId + key);
-      } else {
-        setPinId(pinId + key);
-      }
-    }
-  };
-
-  const handleLogin = (event) => {
-    event.preventDefault();
-    let data = { identifier: staffId, password: pinId };
-    let url = domain + '/api/auth/local';
-    axios
-      .post(url, data)
-      .then((res) => {
-        toast.success('Login success');
-
-        let role = res.data.user.system_role;
-        if (role == 'cashier') {
-          naviagte('/');
-        } else if (role == 'admin') {
-          naviagte('/admin');
-        } else {
-          naviagte('/kitchen');
-        }
-
-        sessionStorage.setItem('jwt', res.data.jwt);
-        sessionStorage.setItem('user', JSON.stringify(res.data.user));
-      })
-      .catch((err) => {
-        toast.error('Invalid Login');
-        console.log(err);
-      });
-  };
 
   useEffect(() => {
     let user = JSON.parse(sessionStorage.getItem('user')) || {};
@@ -71,7 +27,7 @@ export default function LoginStaff() {
 
   return (
     <div className="w-full h-dvh overflow-y-auto bg-[#F8FAFC] flex flex-col items-center p-6.5 gap-4">
-      <form onSubmit={handleLogin} className="w-full max-w-112.5 bg-white rounded-3xl p-10 shadow-[0px_20px_50px_rgba(0,0,0,0.05)] flex flex-col items-center gap-8">
+      <form onSubmit={(event) => handleLogin(event, staffId, pinId)} className="w-full max-w-112.5 bg-white rounded-3xl p-10 shadow-[0px_20px_50px_rgba(0,0,0,0.05)] flex flex-col items-center gap-8">
         <div className="flex flex-col gap-4.75 items-center">
           <div className="w-16 h-16 bg-[#00BC7D] rounded-2xl flex items-center justify-center rotate-12">
             <span className="text-white text-3xl font-bold -rotate-12">G</span>
@@ -104,7 +60,7 @@ export default function LoginStaff() {
             <button
               key={index}
               type="button"
-              onClick={() => handleClick(key)}
+              onClick={() => handleClick(key, setStaffId, setPinId, staffId, pinId, activeInput)}
               className="h-16 rounded-2xl flex items-center justify-center text-xl font-bold active:scale-95
               bg-[#F8FAFC] border border-[#E2E8F0] hover:bg-[#d9dde052]"
             >

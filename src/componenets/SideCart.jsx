@@ -1,25 +1,14 @@
-import { useState } from 'react';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import CartSummary from './CartSummary';
 import SideCartProducts from './SideCartProducts';
 import { useCart, useType } from '../store';
-import Swal from 'sweetalert2';
+import useLogic from '../hooks/useLogic';
 
 export default function SideCart() {
+  const { cart } = useCart();
   const { type, setType } = useType();
-  const { cart, setCart } = useCart();
-  const clearCart = () => {
-    Swal.fire({
-      icon: 'question',
-      showCancelButton: true,
-      text: 'Are you sure you want to clear cart ?',
-    }).then((res) => {
-      if (res.isConfirmed) {
-        setCart([]);
-        Swal.fire({ icon: 'success', text: 'Cart Cleared Successfully' });
-      }
-    });
-  };
+  const { clearCart } = useLogic();
+
   return (
     <div className="flex justify-center border-l border-l-border h-full">
       <div className=" flex flex-col items-center">

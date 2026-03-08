@@ -29,7 +29,7 @@ export default function SideCartProducts({ items }) {
               </div>
               <div className="flex flex-col gap-0.5">
                 <h4 className="text-textDark text-[14px] font-bold">{el.name}</h4>
-                <h4 className="text-mainGreen text-[12px] font-bold">{el.price.toFixed(2)}</h4>
+                <h4 className="text-mainGreen text-[12px] font-bold">{el.price?.toFixed(2)}</h4>
               </div>
             </div>
             <div className="w-26.5 flex p-3.5 bg-[#F8FAFC] border border-border rounded-xl justify-between items-center">

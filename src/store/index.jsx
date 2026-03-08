@@ -11,3 +11,8 @@ export const useType = create((set) => ({
   type: 'Dine',
   setType: (newValue) => set(() => ({ type: newValue })),
 }));
+
+export const useLoader = create((set) => ({
+  loader: false,
+  setLoader: (newValue) => set(() => ({ loader: newValue })),
+}));

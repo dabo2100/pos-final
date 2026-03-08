@@ -1,19 +1,14 @@
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
-import axios from 'axios';
-import { domain } from '../store';
 import { useParams } from 'react-router-dom';
+import { getCategoryProducts } from '../data/getCategoryProducts';
 
 export default function CategoryProducts() {
   const [products, setProducts] = useState([]);
   const params = useParams();
+
   useEffect(() => {
-    let categoryId = params.categoryId;
-    let endPoint = '/api/categories/' + categoryId;
-    let url = domain + endPoint;
-    axios.get(url, { params: { populate: { products: { populate: '*' } } } }).then((res) => {
-      setProducts(res.data.data.products);
-    });
+    getCategoryProducts(params.categoryId).then(setProducts);
   }, [params]);
 
   return (
@@ -35,3 +30,8 @@ export default function CategoryProducts() {
     </div>
   );
 }
+
+
+// ui Layer
+// logic Layer Custom hook
+// data layer api

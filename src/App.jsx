@@ -5,10 +5,14 @@ import CategoryProducts from './pages/CategoryProducts';
 import StaffLogin from './pages/StaffLogin';
 import { Toaster } from 'react-hot-toast';
 import LoginStaff from './pages/LoginPage';
+import Loader from './componenets/Loader';
+import { useLoader } from './store';
 
 export default function App() {
+  const { loader } = useLoader();
   return (
     <div className="w-full h-dvh overflow-hidden">
+      {loader && <Loader />}
       <Toaster />
       <BrowserRouter>
         <Routes>
@@ -25,7 +29,8 @@ export default function App() {
           </Route>
 
           <Route path="/kitchen" element={<h1>kitchen Screen</h1>} />
-          <Route path="/orders" />
+          
+          <Route path="/orders" element={<h1>Check Order</h1>}/>
 
           <Route path="/login" element={<LoginStaff />} />
           <Route path="*" element={<h1>Error 404 | Page Not Found</h1>} />
